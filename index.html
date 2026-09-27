@@ -103,14 +103,14 @@
   }
   .script-line{
     display:block;
-    clip-path:polygon(0 0, 0% 0, -18% 100%, 0 100%);
+    clip-path:polygon(0 0, 0 0, 0 100%, 0 100%);
     animation:scriptReveal 2s linear forwards;
   }
   .script-line.line1{animation-delay:.8s;}
   .script-line.line2{padding-left:8%; animation-delay:3.3s;}
   @keyframes scriptReveal{
-    0%{clip-path:polygon(0 0, 0% 0, -18% 100%, 0 100%);}
-    100%{clip-path:polygon(0 0, 118% 0, 100% 100%, 0 100%);}
+    0%{clip-path:polygon(0 0, 0 0, 0 100%, 0 100%);}
+    100%{clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%);}
   }
   .hero-vert{
     position:absolute; z-index:2; font-family:var(--font-en); font-size:11px; letter-spacing:0.3em; color:rgba(242,237,228,0.75);
@@ -234,6 +234,9 @@
   .stylist-jp{font-family:var(--font-jp); font-size:13px; color:rgba(245,242,236,0.8); letter-spacing:0.06em; margin-bottom:12px;}
   .stylist-bio{font-size:12.5px; color:rgba(245,242,236,0.78); line-height:1.9; margin-bottom:14px;}
   .stylist-quote{font-size:13px; color:rgba(245,242,236,0.92); line-height:1.85; border-left:2px solid var(--brass); padding-left:14px;}
+
+  .voice-photo{width:100%; aspect-ratio:21/8; margin-top:36px; overflow:hidden; background:var(--bg-2);}
+  .voice-photo img{width:100%; height:100%; object-fit:cover; object-position:center 35%; filter:grayscale(0.55) contrast(1.03) brightness(1.02);}
 
   /* voice: infinite horizontal marquee */
   .voice-marquee-wrap{
@@ -467,6 +470,9 @@
     <div class="container">
       <span class="eyebrow reveal" style="--rd:.05s;">Voice</span>
       <h2 class="ed-heading reveal" style="--rd:.1s;">艶をまとった、<br>お客様の声。</h2>
+      <div class="voice-photo reveal" style="--rd:.12s;">
+        <img src="assets/voice-photo.jpg" alt="施術風景" loading="lazy">
+      </div>
     </div>
     <div class="voice-marquee-wrap reveal" style="--rd:.15s;">
       <div class="voice-track">
