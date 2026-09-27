@@ -235,14 +235,15 @@
   .stylist-bio{font-size:12.5px; color:rgba(245,242,236,0.78); line-height:1.9; margin-bottom:14px;}
   .stylist-quote{font-size:13px; color:rgba(245,242,236,0.92); line-height:1.85; border-left:2px solid var(--brass); padding-left:14px;}
 
-  /* voice: photo under the heading, marquee full-bleed below */
-  .voice-photo{width:220px; max-width:46%; aspect-ratio:1611/2000; margin-top:32px; overflow:hidden; background:var(--bg-2);}
+  /* voice: photo under the heading, marquee flush beside it (no wasted space) */
+  .voice-row{display:flex; align-items:flex-start; margin-top:32px;}
+  .voice-photo{flex:0 0 220px; max-width:46%; aspect-ratio:1611/2000; overflow:hidden; background:var(--bg-2);}
   .voice-photo img{width:100%; height:100%; object-fit:cover; object-position:center 30%; filter:grayscale(0.35) contrast(1.05) brightness(1.02);}
   .voice-marquee-wrap{
-    width:100vw; position:relative; left:50%; transform:translateX(-50%);
-    margin-top:36px; overflow:hidden;
-    -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%);
-    mask-image:linear-gradient(90deg, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%);
+    flex:1 1 auto; min-width:0; margin-left:24px; overflow:hidden;
+    margin-right:calc(-1 * max(0px, (100vw - 980px)/2 + 32px));
+    -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 48px, #000 calc(100% - 48px), transparent 100%);
+    mask-image:linear-gradient(90deg, transparent 0, #000 48px, #000 calc(100% - 48px), transparent 100%);
   }
   .voice-track{
     display:flex; width:max-content; gap:22px; padding:6px 32px;
@@ -469,11 +470,11 @@
     <div class="container">
       <span class="eyebrow reveal" style="--rd:.05s;">Voice</span>
       <h2 class="ed-heading reveal" style="--rd:.1s;">艶をまとった、<br>お客様の声。</h2>
-      <div class="voice-photo reveal" style="--rd:.12s;">
-        <img src="assets/voice-photo.jpg" alt="お客様をお迎えする" loading="lazy">
-      </div>
-    </div>
-    <div class="voice-marquee-wrap reveal" style="--rd:.18s;">
+      <div class="voice-row reveal" style="--rd:.12s;">
+        <div class="voice-photo">
+          <img src="assets/voice-photo.jpg" alt="お客様をお迎えする" loading="lazy">
+        </div>
+        <div class="voice-marquee-wrap">
       <div class="voice-track">
         <div class="voice-card"><p class="voice-text">扱いにくかった髪が、艶やかにまとまるようになりました。仕上がりの持ちも全然違います。</p><div class="voice-meta">30s / OFFICE WORKER</div></div>
         <div class="voice-card"><p class="voice-text">完全個室だから、周りを気にせず自分の時間に集中できます。静かな時間そのものが贅沢です。</p><div class="voice-meta">40s / ENTREPRENEUR</div></div>
@@ -499,6 +500,8 @@
         <div class="voice-card" aria-hidden="true"><p class="voice-text">忙しい毎日の中で、ここでの時間だけは自分を取り戻せる気がします。</p><div class="voice-meta">40s / ENTREPRENEUR</div></div>
         <div class="voice-card" aria-hidden="true"><p class="voice-text">パーマの持ちがよく、朝のスタイリングがぐっと楽になりました。</p><div class="voice-meta">30s / TEACHER</div></div>
         <div class="voice-card" aria-hidden="true"><p class="voice-text">初めての完全個室サロンで緊張しましたが、居心地の良さに驚きました。</p><div class="voice-meta">20s / OFFICE WORKER</div></div>
+        </div>
+        </div>
       </div>
     </div>
   </section>
