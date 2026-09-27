@@ -104,10 +104,10 @@
   .script-line{
     display:block;
     clip-path:polygon(0 0, 0% 0, -18% 100%, 0 100%);
-    animation:scriptReveal 9.2s cubic-bezier(.6,0,.15,1) forwards;
+    animation:scriptReveal 2s cubic-bezier(.6,0,.15,1) forwards;
   }
   .script-line.line1{animation-delay:.8s;}
-  .script-line.line2{padding-left:8%; animation-delay:10s;}
+  .script-line.line2{padding-left:8%; animation-delay:3.3s;}
   @keyframes scriptReveal{
     0%{clip-path:polygon(0 0, 0% 0, -18% 100%, 0 100%);}
     100%{clip-path:polygon(0 0, 118% 0, 100% 100%, 0 100%);}
@@ -541,7 +541,7 @@
         setNav(false);
         hoverEnabled = true;
       }, 2600);
-    }, 19700);
+    }, 5800);
   });
 
   var revealEls = document.querySelectorAll('.reveal');
