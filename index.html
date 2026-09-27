@@ -104,7 +104,7 @@
   .script-line{
     display:block;
     clip-path:polygon(0 0, 0% 0, -18% 100%, 0 100%);
-    animation:scriptReveal 2s cubic-bezier(.6,0,.15,1) forwards;
+    animation:scriptReveal 2s linear forwards;
   }
   .script-line.line1{animation-delay:.8s;}
   .script-line.line2{padding-left:8%; animation-delay:3.3s;}
@@ -235,12 +235,29 @@
   .stylist-bio{font-size:12.5px; color:rgba(245,242,236,0.78); line-height:1.9; margin-bottom:14px;}
   .stylist-quote{font-size:13px; color:rgba(245,242,236,0.92); line-height:1.85; border-left:2px solid var(--brass); padding-left:14px;}
 
-  /* voice: stacked, no cards */
-  .voice-list{margin-top:20px;}
-  .voice-item{padding:36px 0; border-bottom:1px solid var(--line);}
-  .voice-item:first-child{border-top:1px solid var(--line);}
-  .voice-text{font-size:15px; line-height:1.95; max-width:640px; margin-bottom:16px;}
-  .voice-meta{font-size:12px; color:var(--ink-soft); font-family:var(--font-en); letter-spacing:0.05em;}
+  /* voice: infinite horizontal marquee */
+  .voice-marquee-wrap{
+    width:100vw; position:relative; left:50%; transform:translateX(-50%);
+    margin-top:32px; overflow:hidden;
+    -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%);
+    mask-image:linear-gradient(90deg, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%);
+  }
+  .voice-track{
+    display:flex; width:max-content; gap:22px; padding:6px 32px;
+    animation:voiceMarquee 52s linear infinite;
+  }
+  .voice-marquee-wrap:hover .voice-track{ animation-play-state:paused; }
+  .voice-card{
+    flex:0 0 auto; width:300px; min-height:210px;
+    background:var(--bg-2); border:1px solid var(--line);
+    padding:28px 26px; display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .voice-card .voice-text{font-size:14px; line-height:1.9; margin-bottom:18px;}
+  .voice-card .voice-meta{font-size:11.5px; color:var(--ink-soft); font-family:var(--font-en); letter-spacing:0.05em;}
+  @keyframes voiceMarquee{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
 
   /* access / final */
   .access-grid{display:grid; grid-template-columns:1fr 1fr; gap:70px;}
@@ -343,28 +360,28 @@
       <h2 class="ed-heading reveal" style="--rd:.1s;">髪型スタイル</h2>
     </div>
     <div class="gallery-grid reveal" style="--rd:.15s;">
-      <button type="button" class="style-item" data-title="SLEEK STRAIGHT" data-desc="後ろ姿にも艶を。一枚の絹のようなストレート。">
+      <button type="button" class="style-item" data-title="FISHTAIL BRAID" data-desc="編み込みで魅せる、上品なハーフアップ。">
         <img src="assets/gallery-1.jpg" alt="スタイル例01" loading="lazy">
       </button>
-      <button type="button" class="style-item" data-title="BOB FLIP" data-desc="毛先をきれいに巻き上げた、上品なボブ。">
+      <button type="button" class="style-item" data-title="ASH PIXIE" data-desc="軽やかな束感が映える、アッシュピクシー。">
         <img src="assets/gallery-2.jpg" alt="スタイル例02" loading="lazy">
       </button>
-      <button type="button" class="style-item" data-title="ROUND BOB" data-desc="内巻きの丸みが美しい、ラウンドボブ。">
+      <button type="button" class="style-item" data-title="BLUNT BOB" data-desc="重めの前髪で仕上げる、艶感ブラントボブ。">
         <img src="assets/gallery-3.jpg" alt="スタイル例03" loading="lazy">
       </button>
-      <button type="button" class="style-item" data-title="LONG WAVE" data-desc="重さと動きを両立した、艶やかなロングウェーブ。">
+      <button type="button" class="style-item" data-title="SOFT BEIGE BOB" data-desc="柔らかな色みが優しい、ミルクベージュボブ。">
         <img src="assets/gallery-4.jpg" alt="スタイル例04" loading="lazy">
       </button>
-      <button type="button" class="style-item" data-title="NATURAL BANGS" data-desc="抜け感のある前髪で、素顔を引き立てる。">
+      <button type="button" class="style-item" data-title="TWIST HALF-UP" data-desc="無造作なツイストで魅せる、ハーフアップ。">
         <img src="assets/gallery-5.jpg" alt="スタイル例05" loading="lazy">
       </button>
-      <button type="button" class="style-item" data-title="CURL STYLING" data-desc="コテで仕上げる、動きのあるカールスタイリング。">
+      <button type="button" class="style-item" data-title="HONEY WAVE" data-desc="温かみのある、ハニーブラウンのロングウェーブ。">
         <img src="assets/gallery-6.jpg" alt="スタイル例06" loading="lazy">
       </button>
-      <button type="button" class="style-item" data-title="MEN'S SHORT" data-desc="襟足まですっきりと。清潔感のあるメンズショート。">
+      <button type="button" class="style-item" data-title="ONE-LENGTH STRAIGHT" data-desc="漆黒の艶が美しい、ワンレングスストレート。">
         <img src="assets/gallery-7.jpg" alt="スタイル例07" loading="lazy">
       </button>
-      <button type="button" class="style-item" data-title="PRECISION CUT" data-desc="濡れた髪に、繊細なシザーワークで丁寧にカット。">
+      <button type="button" class="style-item" data-title="PINK CURL" data-desc="華やかな巻きが目を引く、ピンクベージュカール。">
         <img src="assets/gallery-8.jpg" alt="スタイル例08" loading="lazy">
       </button>
     </div>
@@ -450,19 +467,33 @@
     <div class="container">
       <span class="eyebrow reveal" style="--rd:.05s;">Voice</span>
       <h2 class="ed-heading reveal" style="--rd:.1s;">艶をまとった、<br>お客様の声。</h2>
-      <div class="voice-list">
-        <div class="voice-item reveal" style="--rd:.05s;">
-          <p class="voice-text">扱いにくかった髪が、艶やかにまとまるようになりました。仕上がりの持ちも全然違います。</p>
-          <div class="voice-meta">30s / OFFICE WORKER</div>
-        </div>
-        <div class="voice-item reveal" style="--rd:.12s;">
-          <p class="voice-text">完全個室だから、周りを気にせず自分の時間に集中できます。静かな時間そのものが贅沢です。</p>
-          <div class="voice-meta">40s / ENTREPRENEUR</div>
-        </div>
-        <div class="voice-item reveal" style="--rd:.19s;">
-          <p class="voice-text">カウンセリングがとても丁寧で、毎回安心してお任せできます。似合わせる力に信頼があります。</p>
-          <div class="voice-meta">20s / OFFICE WORKER</div>
-        </div>
+    </div>
+    <div class="voice-marquee-wrap reveal" style="--rd:.15s;">
+      <div class="voice-track">
+        <div class="voice-card"><p class="voice-text">扱いにくかった髪が、艶やかにまとまるようになりました。仕上がりの持ちも全然違います。</p><div class="voice-meta">30s / OFFICE WORKER</div></div>
+        <div class="voice-card"><p class="voice-text">完全個室だから、周りを気にせず自分の時間に集中できます。静かな時間そのものが贅沢です。</p><div class="voice-meta">40s / ENTREPRENEUR</div></div>
+        <div class="voice-card"><p class="voice-text">カウンセリングがとても丁寧で、毎回安心してお任せできます。似合わせる力に信頼があります。</p><div class="voice-meta">20s / OFFICE WORKER</div></div>
+        <div class="voice-card"><p class="voice-text">白髪もきれいにぼかしてもらえて、自然な仕上がりに満足しています。</p><div class="voice-meta">50s / SELF-EMPLOYED</div></div>
+        <div class="voice-card"><p class="voice-text">前髪の作り方ひとつで印象がガラッと変わることに驚きました。</p><div class="voice-meta">20s / STUDENT</div></div>
+        <div class="voice-card"><p class="voice-text">上原さんの手つきが丁寧で、切られている時間そのものが心地よいです。</p><div class="voice-meta">30s / DESIGNER</div></div>
+        <div class="voice-card"><p class="voice-text">縮毛矯正なのに、ぺたんこにならず自然なツヤが出るのが嬉しい。</p><div class="voice-meta">40s / OFFICE WORKER</div></div>
+        <div class="voice-card"><p class="voice-text">香りや音楽まで含めて、非日常の時間を過ごせるサロンです。</p><div class="voice-meta">30s / NURSE</div></div>
+        <div class="voice-card"><p class="voice-text">骨格に合わせた提案が的確で、毎回「これだ」と思える仕上がりに。</p><div class="voice-meta">20s / OFFICE WORKER</div></div>
+        <div class="voice-card"><p class="voice-text">忙しい毎日の中で、ここでの時間だけは自分を取り戻せる気がします。</p><div class="voice-meta">40s / ENTREPRENEUR</div></div>
+        <div class="voice-card"><p class="voice-text">パーマの持ちがよく、朝のスタイリングがぐっと楽になりました。</p><div class="voice-meta">30s / TEACHER</div></div>
+        <div class="voice-card"><p class="voice-text">初めての完全個室サロンで緊張しましたが、居心地の良さに驚きました。</p><div class="voice-meta">20s / OFFICE WORKER</div></div>
+        <div class="voice-card" aria-hidden="true"><p class="voice-text">扱いにくかった髪が、艶やかにまとまるようになりました。仕上がりの持ちも全然違います。</p><div class="voice-meta">30s / OFFICE WORKER</div></div>
+        <div class="voice-card" aria-hidden="true"><p class="voice-text">完全個室だから、周りを気にせず自分の時間に集中できます。静かな時間そのものが贅沢です。</p><div class="voice-meta">40s / ENTREPRENEUR</div></div>
+        <div class="voice-card" aria-hidden="true"><p class="voice-text">カウンセリングがとても丁寧で、毎回安心してお任せできます。似合わせる力に信頼があります。</p><div class="voice-meta">20s / OFFICE WORKER</div></div>
+        <div class="voice-card" aria-hidden="true"><p class="voice-text">白髪もきれいにぼかしてもらえて、自然な仕上がりに満足しています。</p><div class="voice-meta">50s / SELF-EMPLOYED</div></div>
+        <div class="voice-card" aria-hidden="true"><p class="voice-text">前髪の作り方ひとつで印象がガラッと変わることに驚きました。</p><div class="voice-meta">20s / STUDENT</div></div>
+        <div class="voice-card" aria-hidden="true"><p class="voice-text">上原さんの手つきが丁寧で、切られている時間そのものが心地よいです。</p><div class="voice-meta">30s / DESIGNER</div></div>
+        <div class="voice-card" aria-hidden="true"><p class="voice-text">縮毛矯正なのに、ぺたんこにならず自然なツヤが出るのが嬉しい。</p><div class="voice-meta">40s / OFFICE WORKER</div></div>
+        <div class="voice-card" aria-hidden="true"><p class="voice-text">香りや音楽まで含めて、非日常の時間を過ごせるサロンです。</p><div class="voice-meta">30s / NURSE</div></div>
+        <div class="voice-card" aria-hidden="true"><p class="voice-text">骨格に合わせた提案が的確で、毎回「これだ」と思える仕上がりに。</p><div class="voice-meta">20s / OFFICE WORKER</div></div>
+        <div class="voice-card" aria-hidden="true"><p class="voice-text">忙しい毎日の中で、ここでの時間だけは自分を取り戻せる気がします。</p><div class="voice-meta">40s / ENTREPRENEUR</div></div>
+        <div class="voice-card" aria-hidden="true"><p class="voice-text">パーマの持ちがよく、朝のスタイリングがぐっと楽になりました。</p><div class="voice-meta">30s / TEACHER</div></div>
+        <div class="voice-card" aria-hidden="true"><p class="voice-text">初めての完全個室サロンで緊張しましたが、居心地の良さに驚きました。</p><div class="voice-meta">20s / OFFICE WORKER</div></div>
       </div>
     </div>
   </section>
