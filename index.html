@@ -104,10 +104,10 @@
   .script-line{
     display:block;
     clip-path:polygon(0 0, 0% 0, -18% 100%, 0 100%);
-    animation:scriptReveal 4.6s cubic-bezier(.6,0,.15,1) forwards;
+    animation:scriptReveal 2.3s cubic-bezier(.6,0,.15,1) forwards;
   }
   .script-line.line1{animation-delay:.8s;}
-  .script-line.line2{padding-left:8%; animation-delay:6s;}
+  .script-line.line2{padding-left:8%; animation-delay:3.1s;}
   @keyframes scriptReveal{
     0%{clip-path:polygon(0 0, 0% 0, -18% 100%, 0 100%);}
     100%{clip-path:polygon(0 0, 118% 0, 100% 100%, 0 100%);}
@@ -349,10 +349,10 @@
       <button type="button" class="style-item" data-title="BOB FLIP" data-desc="毛先をきれいに巻き上げた、上品なボブ。">
         <img src="assets/gallery-2.jpg" alt="スタイル例02" loading="lazy">
       </button>
-      <button type="button" class="style-item" data-title="CURLY HALF-UP" data-desc="動きのあるカールを活かした、ハーフアップ。">
+      <button type="button" class="style-item" data-title="ROUND BOB" data-desc="内巻きの丸みが美しい、ラウンドボブ。">
         <img src="assets/gallery-3.jpg" alt="スタイル例03" loading="lazy">
       </button>
-      <button type="button" class="style-item" data-title="LONG STRAIGHT" data-desc="一本一本の艶を大切にした、ロングストレート。">
+      <button type="button" class="style-item" data-title="LONG WAVE" data-desc="重さと動きを両立した、艶やかなロングウェーブ。">
         <img src="assets/gallery-4.jpg" alt="スタイル例04" loading="lazy">
       </button>
       <button type="button" class="style-item" data-title="NATURAL BANGS" data-desc="抜け感のある前髪で、素顔を引き立てる。">
@@ -541,7 +541,7 @@
         setNav(false);
         hoverEnabled = true;
       }, 2600);
-    }, 11200);
+    }, 5900);
   });
 
   var revealEls = document.querySelectorAll('.reveal');
