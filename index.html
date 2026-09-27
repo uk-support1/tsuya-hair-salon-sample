@@ -66,16 +66,16 @@
 
   /* side nav panel: slides in slowly from the right, like a drawer */
   .nav-overlay{
-    position:fixed; top:0; right:0; z-index:99; width:min(340px, 82vw); height:100vh;
-    background:var(--bg); box-shadow:-20px 0 60px -20px rgba(20,17,13,0.35);
+    position:fixed; top:0; right:0; z-index:99; width:min(240px, 74vw); height:100vh;
+    background:var(--bg); box-shadow:-16px 0 44px -20px rgba(20,17,13,0.3);
     overflow-y:auto; pointer-events:none;
     transform:translateX(120%);
     transition:transform 1.2s cubic-bezier(.65,0,.24,1);
   }
   .nav-overlay.is-open{pointer-events:auto; transform:translateX(0);}
-  .nav-list{list-style:none; padding:110px 40px 40px;}
-  .nav-list li{margin:26px 0;}
-  .nav-list a{font-family:var(--font-en); font-size:20px; letter-spacing:0.1em; color:var(--ink); transition:color .3s ease;}
+  .nav-list{list-style:none; padding:100px 28px 30px;}
+  .nav-list li{margin:18px 0;}
+  .nav-list a{font-family:var(--font-en); font-size:14.5px; letter-spacing:0.08em; color:var(--ink); transition:color .3s ease;}
   .nav-list a:hover{color:var(--brass-deep);}
   .nav-list .jp{display:block; font-family:var(--font-jp); font-size:11.5px; color:var(--ink-soft); letter-spacing:0.06em; margin-top:6px;}
 
@@ -104,10 +104,10 @@
   .script-line{
     display:block;
     clip-path:polygon(0 0, 0% 0, -18% 100%, 0 100%);
-    animation:scriptReveal 3.4s cubic-bezier(.6,0,.15,1) forwards;
+    animation:scriptReveal 4.6s cubic-bezier(.6,0,.15,1) forwards;
   }
-  .script-line.line1{animation-delay:.6s;}
-  .script-line.line2{padding-left:8%; animation-delay:4.3s;}
+  .script-line.line1{animation-delay:.8s;}
+  .script-line.line2{padding-left:8%; animation-delay:6s;}
   @keyframes scriptReveal{
     0%{clip-path:polygon(0 0, 0% 0, -18% 100%, 0 100%);}
     100%{clip-path:polygon(0 0, 118% 0, 100% 100%, 0 100%);}
@@ -231,7 +231,8 @@
   .stylist-overlay{position:absolute; left:0; right:0; bottom:0; z-index:2; padding:28px 7% 30px;}
   .stylist-eyebrow{font-family:var(--font-en); font-size:11.5px; letter-spacing:0.3em; color:var(--brass); margin-bottom:12px; display:block;}
   .stylist-huge{font-family:var(--font-en); font-size:clamp(30px,9vw,52px); line-height:0.95; color:#f5f2ec; letter-spacing:0.02em; margin-bottom:14px;}
-  .stylist-jp{font-family:var(--font-jp); font-size:13px; color:rgba(245,242,236,0.8); letter-spacing:0.06em; margin-bottom:14px;}
+  .stylist-jp{font-family:var(--font-jp); font-size:13px; color:rgba(245,242,236,0.8); letter-spacing:0.06em; margin-bottom:12px;}
+  .stylist-bio{font-size:12.5px; color:rgba(245,242,236,0.78); line-height:1.9; margin-bottom:14px;}
   .stylist-quote{font-size:13px; color:rgba(245,242,236,0.92); line-height:1.85; border-left:2px solid var(--brass); padding-left:14px;}
 
   /* voice: stacked, no cards */
@@ -342,13 +343,13 @@
       <h2 class="ed-heading reveal" style="--rd:.1s;">髪型スタイル</h2>
     </div>
     <div class="gallery-grid reveal" style="--rd:.15s;">
-      <button type="button" class="style-item" data-title="GLOSSY BOB" data-desc="艶やかな一枚のラインで魅せる、上質なボブ。">
+      <button type="button" class="style-item" data-title="SLEEK STRAIGHT" data-desc="後ろ姿にも艶を。一枚の絹のようなストレート。">
         <img src="assets/gallery-1.jpg" alt="スタイル例01" loading="lazy">
       </button>
-      <button type="button" class="style-item" data-title="BLUNT BANGS" data-desc="重めに切り揃えた前髪で、輪郭に陰影を。">
+      <button type="button" class="style-item" data-title="BOB FLIP" data-desc="毛先をきれいに巻き上げた、上品なボブ。">
         <img src="assets/gallery-2.jpg" alt="スタイル例02" loading="lazy">
       </button>
-      <button type="button" class="style-item" data-title="SOFT WAVE" data-desc="自然光に映える、柔らかな束感ウェーブ。">
+      <button type="button" class="style-item" data-title="CURLY HALF-UP" data-desc="動きのあるカールを活かした、ハーフアップ。">
         <img src="assets/gallery-3.jpg" alt="スタイル例03" loading="lazy">
       </button>
       <button type="button" class="style-item" data-title="LONG STRAIGHT" data-desc="一本一本の艶を大切にした、ロングストレート。">
@@ -360,7 +361,7 @@
       <button type="button" class="style-item" data-title="CURL STYLING" data-desc="コテで仕上げる、動きのあるカールスタイリング。">
         <img src="assets/gallery-6.jpg" alt="スタイル例06" loading="lazy">
       </button>
-      <button type="button" class="style-item" data-title="MEN'S SIDE PART" data-desc="清潔感と抜け感を両立する、メンズサイドパート。">
+      <button type="button" class="style-item" data-title="MEN'S SHORT" data-desc="襟足まですっきりと。清潔感のあるメンズショート。">
         <img src="assets/gallery-7.jpg" alt="スタイル例07" loading="lazy">
       </button>
       <button type="button" class="style-item" data-title="PRECISION CUT" data-desc="濡れた髪に、繊細なシザーワークで丁寧にカット。">
@@ -439,7 +440,8 @@
         <span class="stylist-eyebrow">Stylist</span>
         <h2 class="stylist-huge">KENTA<br>UEHARA</h2>
         <p class="stylist-jp">上原 健太 — Representative Stylist</p>
-        <p class="stylist-quote">技術より先に、人を見る。流行りではなく、その人自身に似合う艶を——それだけを、ずっと考えている。</p>
+        <p class="stylist-bio">高知大学時代、暮らしていた南溟寮で、気づけば仲間の髪を切る日々を過ごしていた。のべ500人を超えたころ、学園祭「黒潮祭」でヘアサロンブースを出店——それが、この道を志す最初のきっかけだった。</p>
+        <p class="stylist-quote">人は、願望すれば変われる。その一歩を踏み出す勇気を後押しし、お客様が"なりたい自分"になれるよう支え続けたい。</p>
       </div>
     </div>
   </section>
@@ -531,7 +533,7 @@
     a.addEventListener('click', function(){ setNav(false); });
   });
 
-  /* auto-demo the nav once on load, then switch to hover-driven */
+  /* auto-demo the nav once the hero's two lines finish writing, then switch to hover-driven */
   window.addEventListener('load', function(){
     setTimeout(function(){
       setNav(true);
@@ -539,7 +541,7 @@
         setNav(false);
         hoverEnabled = true;
       }, 2600);
-    }, 900);
+    }, 11200);
   });
 
   var revealEls = document.querySelectorAll('.reveal');
