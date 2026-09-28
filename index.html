@@ -235,8 +235,12 @@
   .stylist-bio{font-size:12.5px; color:rgba(245,242,236,0.78); line-height:1.9; margin-bottom:14px;}
   .stylist-quote{font-size:13px; color:rgba(245,242,236,0.92); line-height:1.85; border-left:2px solid var(--brass); padding-left:14px;}
   @media (max-width:700px){
-    .stylist-huge{color:#f0d9a8;}
-    .stylist-jp{color:rgba(240,217,168,0.85);}
+    .stylist-media{aspect-ratio:auto;}
+    .stylist-media img{position:static; width:100%; height:auto; aspect-ratio:1/1; display:block;}
+    .stylist-media::after{content:none;}
+    .stylist-overlay{position:static; padding:22px 7% 6px;}
+    .stylist-huge{color:#a7c4e8;}
+    .stylist-jp{color:rgba(167,196,232,0.85);}
   }
 
   /* voice: photo under the heading, marquee flush beside it (no wasted space) */
@@ -288,6 +292,8 @@
     padding:16px 42px; transition:background .3s ease, transform .3s ease;
   }
   .access-btn:hover{background:var(--brass-deep); transform:translateY(-2px);}
+  .access-map{margin-top:24px; overflow:hidden; border:1px solid var(--line);}
+  .access-map iframe{display:block; width:100%; height:220px; filter:grayscale(1) contrast(1.05);}
   @media (max-width:760px){ .access-grid{grid-template-columns:1fr; gap:10px;} }
 
   footer{padding:56px 0 36px; border-top:1px solid var(--line);}
@@ -534,6 +540,9 @@
           <div class="access-block">
             <div class="access-label">ACCESS</div>
             <div class="access-value">地下鉄○○駅 ○番出口から徒歩3分</div>
+          </div>
+          <div class="access-map">
+            <iframe src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA&z=15&output=embed" width="100%" height="220" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="サロン周辺地図"></iframe>
           </div>
         </div>
         <div>
